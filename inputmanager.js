@@ -71,5 +71,34 @@ class CheckboxManager extends InputManager{
   }
 }
 
+class RadioManager extends InputManager{
+  static selector = ".radio-storage"
+  
+  constructor(input){
+    super(input)
+    this.input.onchange = this.onchange.bind(this)
+  }
+
+  updateValue(){    
+      this.name = this.input.getAttribute('name')
+      if(!localStorageManager.user[this.name]) {
+       this.input.checked = localStorageManager.user[this.name]
+    }
+  }
+
+  onchange(){
+    if(localStorageManager.user[this.name] && this.input !== null){
+      localStorageManager.user[this.name] = this.input.value    
+      localStorageManager.save()
+    }
+  }
+
+  static createInstances(){
+    const elements = document.querySelectorAll(this.selector)
+    elements.forEach((i)=>new this(i))
+  }
+}
+
 InputManager.createInstances()
 CheckboxManager.createInstances()
+RadioManager.createInstances()
