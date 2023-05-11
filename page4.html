@@ -1,33 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>Registration - Summary</title>
-    <link rel="stylesheet" href="styles.css">
-    <h1>Registration Summary</h1>
-  </head>
-  <body class="Information">
-    <div class = "form-summary">
-      
-      <div class="summary" id="name">Name: </div>
-      <br>
-      <div class="summary" id="email">Email: </div>
-      <br>
-      <div class="summary" id="birthday">Birthdate: </div>
-      <br>
-      <div class="summary-address" id="address">Address: </div>
-      <div class="summary-img" id="image"><img src="" alt=""></div>
-      <div class="summary" id="hobbies">Hobbies: </div>
-      <br>
-      <div class="summary-button">
-        <button onclick="localStorageManager.newRegistration()">Reset</button>
-      </div>
-      
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+    <title>Questionnaire - Page 4</title>
+</head>
+<body class="Information">
+    <h1>Get to Know You Better</h1>
+   <div class="form">
+    <div>
+        <label>Are you a happy person?</label>
+        <div class="child" id="happyValidation"></div>
+        <p>
+           <input type="radio" name="happy" value="yes">Yes</input>
+        </p>
+        <p>
+           <input type="radio" name="happy" value="no">No</input>
+        </p>           
     </div>
-  </body>
+    <div>
+        <label>Will you do skydiving?</label>
+        <div class="child" id="skydivingValidation"></div>
+        <p>
+           <input type="radio" name="skydiving" value="yes">Yes</input>
+        </p>
+        <p>
+           <input type="radio" name="skydiving" value="maybe">Maybe</input>
+        </p>           
+        <p>
+            <input type="radio" name="skydiving" value="no">No</input>
+         </p>    
+    </div>
+    <div>
+        <label>Do you have 1$ in your pocket now?</label>
+        <div class="child" id="dollarValidation"></div>
+        <p>
+           <input type="radio" name="dollar" value="yes3">Yes</input>
+        </p>
+        <p>
+           <input type="radio" name="dollar" value="no">No</input>
+        </p>           
+    </div>
+    <div class="buttons">
+        <button id="previousbutton" step="4" onclick="backButton()">Previous</button>
+        <button id="nextbutton" step="4" onclick="nextButtons()">Submit</button>
+    </div>
+  </div>
   <script src="classes.js"></script>
   <script src="localstorage.js"></script>
   <script src="inputmanager.js"></script>
-  <script src="displaymanager.js"></script>
   <script src="pageredirection.js"></script>
+  <script src="buttons.js"></script>
+  <script src="validationsPage4.js"></script>
+</body>
 </html>
